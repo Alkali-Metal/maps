@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Russo+One|Ubuntu');
+
+
+html, body {
+    color: #99AAB5;
+    background-color: #2C2F33;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Russo One', 'Josefin Sans', 'Ubuntu';
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 50px 150px 500px 200px;
+}
+
+
+.title {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: -1;
+    font-size: 50;
+    text-align: center;
+}
+
+
+.description {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    text-align: center;
+}
+
+
+.attribution {
+    grid-column-start: 0;
+    grid-column-end: 0;
+    grid-row-start: -2;
+    grid-row-end: -1;
+}
