@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>Alkali Metal's Maps</title>
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.css'>
+        <style>
+            body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;line-height:1.4;max-width:800px;margin:20px auto;padding:0 10px;color:#dbdbdb;background:#202b38;text-rendering:optimizeLegibility}button,input,textarea{transition:background-color .1s linear,border-color .1s linear,color .1s linear,box-shadow .1s linear,transform .1s ease}h1{font-size:2.2em;margin-top:0}h1,h2,h3,h4,h5,h6{margin-bottom:12px}h1,h2,h3,h4,h5,h6,strong{color:#fff}b,h1,h2,h3,h4,h5,h6,strong,th{font-weight:600}button,input[type=button],input[type=checkbox],input[type=submit]{cursor:pointer}input:not([type=checkbox]),select{display:block}button,input,select,textarea{color:#fff;background-color:#161f27;font-family:inherit;font-size:inherit;margin-right:6px;margin-bottom:6px;padding:10px;border:none;border-radius:6px;outline:none}button,input:not([type=checkbox]),select,textarea{-webkit-appearance:none}textarea{margin-right:0;width:100%;box-sizing:border-box;resize:vertical}button,input[type=button],input[type=submit]{padding-right:30px;padding-left:30px}button:hover,input[type=button]:hover,input[type=submit]:hover{background:#324759}button:focus,input:focus,select:focus,textarea:focus{box-shadow:0 0 0 2px rgba(0,150,191,.67)}button:active,input[type=button]:active,input[type=checkbox]:active,input[type=submit]:active{transform:translateY(2px)}input:disabled{cursor:not-allowed;opacity:.5}::-webkit-input-placeholder{color:#a9a9a9}:-ms-input-placeholder{color:#a9a9a9}::-ms-input-placeholder{color:#a9a9a9}::placeholder{color:#a9a9a9}a{text-decoration:none;color:#41adff}a:hover{text-decoration:underline}code,kbd{background:#161f27;color:#ffbe85;padding:5px;border-radius:6px}pre>code{padding:10px;display:block;overflow-x:auto}img{max-width:100%}hr{border:none;border-top:1px solid #dbdbdb}table{border-collapse:collapse;margin-bottom:10px;width:100%}td,th{padding:6px;text-align:left}th{border-bottom:1px solid #dbdbdb}tbody tr:nth-child(2n){background-color:#161f27}
+/*# sourceMappingURL=dark.css.map */
+            .hidden {
+                display: none;
+            }
+
+            .center {
+                text-align: center
+            }
+
+            table>td {
+                border: none
+            }
+        </style>
+        <script>
+            const toggle_visibility = (element_id) => {
+                let element = document.getElementById(element_id);
+                if (element.className === "") {
+                    element.className = "hidden"
+                } else {
+                    element.className = ""
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <div class="center">
+                <h1>About Alkali Metal</h1>
+                Alkali Metal is a univeristy student studying computer science
+                with an affinity for software development, he originally got
+                started on the track of coding through the use of Minecraft
+                command blocks and messing around with a variety of commands
+                until they became not as satifying and started learning Python.
+                He has since continued his love for Minecraft and programming
+                throughout the years. Below is a list of maps that Alkali has
+                made/worked on, you can expand it by clicking on the map title.
+                You can get in contact with Alkali by joining his
+                <a href="https://discord.gg/3yYJB95">Discord</a> server.
+            </div>
+        </div>
+        <br><br>
+        <div class="platform-power">
+            <div class="center">
+                <h2><button onclick="toggle_visibility('platform-power-text')">Platform Power</button></h2>
+                <div id="platform-power-text" class="hidden">
+                    Platform Power is a team PVP combat game based around protecting
+                    your bed and keeping your platforms powered. Suitable for 2+
+                    players. Originally created by Jarren and Ben Baptist, Alkali
+                    has received permission from Jarren to port Platform Power to
+                    Minecraft release version 1.14.
+                    <table class="hidden">
+                        <tbody>
+                            <tr>
+                                <td>Version Compatibility:</td>
+                                <td>Release 1.14</td>
+                            </tr>
+                            <tr>
+                                <td>Players:</td>
+                                <td>2+</td>
+                            </tr>
+                            <tr>
+                                <td>Playtime:</td>
+                                <td>60-180 minutes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <h3><a href="./Platform-Power/index.html" target=_blank>Overview</a></h3>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

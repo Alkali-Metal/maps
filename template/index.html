@@ -1,14 +1,39 @@
 <html>
     <head>
-        <title>MAP TEMPLATE</title>
-        <link rel="stylesheet" href="../main.css">
+        <title>MAP TITLE - Overview</title>
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.css'>
+        <style>
+            .hidden {
+                display: none;
+            }
+
+            .center {
+                text-align: center
+            }
+        </style>
     </head>
-    <body class=container>
-        <div class=title>
-            MAP TITLE
+    <body>
+        <div class="center">
+            <h1>MAP TITLE</h1>
         </div>
-        <div class=description>
+        <div>
             Description
+        </div>
+        <br><br>
+        <div>
+            <h2>Additional Links:</h2>
+            <a href="./how-to-play.html">How To Play</a>
+            <br>
+            <a href="./attributions.html">Attributions</a>
+        </div>
+        <div>
+            <h2>Images:</h2>
+            <img src="">
+        </div>
+        <br>
+        <div id="platform-power-download" class="center hidden">
+            <!--<button onclick="window.open('./assets/map.zip')">Download</button-->
+            <button onclick="alert('The map isn\'t quite ready for download yet, check back later for the download')">Download</button>
         </div>
     </body>
 </html>
