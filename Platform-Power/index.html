@@ -1,16 +1,12 @@
+<!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="Content-Type" th=content="text/html;charset=UTF-8">
+        <meta name="viewport" content="widdevice-width, initial-scale=1.0">
         <title>Platform Power - Overview</title>
         <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.css'>
-        <style>
-            .hidden {
-                display: none;
-            }
-
-            .center {
-                text-align: center
-            }
-        </style>
+        <link rel="stylesheet" href="../style.css">
+        <script src="../utils.js"></script>
     </head>
     <body>
         <div style="text-align: center">
@@ -49,7 +45,7 @@
         </a href="#download">
         <div class="center">
             <button onclick="alert('The map isn\'t quite ready for download yet, check back later for the download')">Download Map</button>
-            <a class="hidden" href="./assets/green_1.tar.xz">
+            <a download data-hidden="true" href="./assets/green_1.tar.xz">
                 <button>Download Map</button>
             </a>
         </div>
