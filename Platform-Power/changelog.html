@@ -13,6 +13,39 @@
             <h1>Platform Power Changelog</h1>
         </div>
         <div id="changelog">
+            <div id="1.5.0">
+                <h3>Version 1.5.0</h3>
+                Changes in version 1.5.0:
+                <ul>
+                    <li>
+                        Added support for Minecraft 1.15.2
+                    </li>
+                    <li>
+                        Made the game controls much cleaner by using an inventory
+                        menu rather than a command book. This prevents players
+                        from needing to add the <code>op</code> tag to
+                        themselves and allows a more seamless experience for
+                        everyone. The menu includes a prompt for the hotbar
+                        that displays the keybind the user has the open
+                        inventory key set to.
+                    </li>
+                    <li>
+                        Added team randomization options.
+                    </li>
+                    <li>
+                        Spectator is now not the default team. Unless the game
+                        has started, in which case everyone without a team will
+                        be put onto the spectator team.
+                    </li>
+                    <li>
+                        To restrict menu control to those who are event
+                        organizers you can run <code>/tag @s add control</code>
+                        as the user who wants control. This tag can be given to
+                        as many players as desired. This also exposes an extra
+                        setting to remove everyone from all teams.
+                    </li>
+                </ul>
+            </div>
             <div id="1.4.0">
                 <h2>Version 1.4.0</h2>
                 Changes in version 1.4.0:
@@ -28,7 +61,7 @@
                     </li>
                     <li>
                         Updated the list of blocks that the game uses to clear
-                        the map, this should prevent and rogue blocks from
+                        the map, this should prevent any rogue blocks from
                         slipping through the reset system that is in place.
                         The added tags are <code>minecraft:block_list</code>
                         and <code>minecraft:wall_signs</code> (overwritting
