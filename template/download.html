@@ -25,6 +25,11 @@
         <div class="center">
             <a href="./index.html">Back to Overview</a>
 		</div>
-		<script> download(`FILENAME`); </script>
+		<script>
+			let querystring = new URLSearchParams(window.location.search);
+			if (!querystring[`nodownload`]) {
+				download(`FILENAME`);
+			}
+		</script>
     </body>
 </html>
