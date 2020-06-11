@@ -17,7 +17,7 @@ const toggle_visibility = (element_id) => {
 const download = (file) => {
     var element = document.createElement('a');
     element.setAttribute('href', `./assets/downloads/${file}`);
-    element.setAttribute('download', true)
+    element.setAttribute('download', `./assets/downloads/${file}`)
     element.style.display = 'none';
     document.body.appendChild(element);
     element.click();
