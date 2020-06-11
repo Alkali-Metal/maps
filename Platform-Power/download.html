@@ -52,7 +52,7 @@
 		</div>
 		<script>
 			let params = new URLSearchParams(window.location.search);
-			if (params.get(`nodownload`)) {
+			if (params.get(`nodownload`) == null || params.get(`nodownload`) === `false`) {
 				download(`Platform_Power_1.15.2-V1.5.0.zip`);
 			};
 			</script>
