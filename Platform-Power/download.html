@@ -32,14 +32,14 @@
 					<li>
 						If you are hosting an event on this map, if you don't want all players to be able to change the game settings and start the game, run the following command for all players you want to be able to control the game.
 						<br>
-						<code>/tag USERNAME add control</code>
+						<pre><code>/tag USERNAME add control</code></pre>
 						<br>
 						This will remove the game controls from all users that do not have that tag. Any number of players can have this tag to give them control of the game.
 					</li>
 					<li>
 						To credit the creators of the map in videos and streams, please link to:
 						<br>
-						https://alkali-metal.github.io/maps/Platform-Power/
+						<pre><code>https://alkali-metal.github.io/maps/Platform-Power/</code></pre>
 					</li>
 				</ol>
 				Debug information can be found by running the following command as an operator:
@@ -52,7 +52,7 @@
 		</div>
 		<script>
 			let params = new URLSearchParams(window.location.search);
-			if (!params.get(`nodownload`)) {
+			if (params.get(`nodownload`)) {
 				download(`Platform_Power_1.15.2-V1.5.0.zip`);
 			};
 			</script>

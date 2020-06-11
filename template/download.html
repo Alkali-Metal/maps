@@ -27,7 +27,7 @@
 		</div>
 		<script>
 			let querystring = new URLSearchParams(window.location.search);
-			if (!params.get(`nodownload`)) {
+			if (params.get(`nodownload`)) {
 				download(`FILENAME`);
 			}
 		</script>
