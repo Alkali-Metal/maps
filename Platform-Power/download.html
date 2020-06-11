@@ -51,8 +51,8 @@
             <a href="./index.html">Back to Overview</a>
 		</div>
 		<script>
-			let querystring = new URLSearchParams(window.location.search);
-			if (!querystring[`nodownload`]) {
+			let params = new URLSearchParams(window.location.search);
+			if (!params.get(`nodownload`)) {
 				download(`Platform_Power_1.15.2-V1.5.0.zip`);
 			};
 			</script>
