@@ -12,3 +12,22 @@ img {
     display: block;
     margin: 0 auto;
 }
+
+
+div.toc h2 {
+    text-align: center;
+}
+
+div.toc > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+div.toc > ul > li {
+    padding: 5px;
+    margin: 5px;
+}

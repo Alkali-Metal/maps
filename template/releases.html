@@ -3,56 +3,41 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MAP TITLE - Releases</title>
 
 	<!-- CSS Imports -->
 	<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.css'>
 	<link rel="stylesheet" href="../style.css">
 
-	<!-- Define Metadata -->
-	<footer id="meta">
-		<title>{{name}} - Overview</title>
-		<meta property="og:title" :content="title">
-		<meta property="og:description" :content="description">
-		<meta name="description" :content="description">
-	</footer>
-
 	<!-- Javascript Imports -->
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="./data.js" defer></script>
 	<script src="../utils.js"></script>
-	<script src="./meta.js"></script>
 </head>
 <body>
 <div id="app">
-	<h1 class="center">{{map.name}}</h1>
-	<p class="center">{{map.description}}</p>
 
-	<div class="toc" id="table_of_contents">
+	<h1 class="center">{{map.name}}</h1>
+	<p class="center">
+		This is where you can download all historical releases of {{map.name}}.
+		<br>
+		<b>It is not recommended to download non-latest version.</b>
+	</p>
+
+	<div id="table_of_contents" class="toc">
 		<h2>Additional Links:</h2>
 		<ul>
 			<li v-for="link in page.contents"><a :href="link[1]">{{link[0]}}</a></li>
 		</ul>
 	</div>
 
-	<div class="center" id="map-downloads" v-if="latest">
-		<a data-hidden="false" href="./download.html">
-			<button>Download Map Version {{latest.id}} for Minecraft {{latest.mc_versions}}</button>
-		</a>
-	</div>
-
-	<div class="center" id="images">
-		<img v-for="image of map.images" :src="`./assets/${image[0]}`" :alt="image[1]">
-	</div>
+	<div id="body"></div>
 
 	<div id="footer" class="center toc" v-if="page.show.footer">
 		<ul>
 			<li v-for="link in page.footer"><a :href="link[1]">{{link[0]}}</a></li>
 		</ul>
 	</div>
-</div>
-<div data-hidden="true">
-	<h2>Images:</h2>
-	<img src="">
 </div>
 </body>
 </html>

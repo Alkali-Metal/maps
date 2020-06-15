@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" th=content="text/html;charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MAP TITLE - Attributions</title>
-        <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.css'>
-        <link rel="stylesheet" href="../style.css">
-        <script src="../utils.js"></script>
-    </head>
-    <body>
-        <div class="center">
-            <h1>MAP TITLE</h1>
-        </div>
-        <br>
-        <div>
-            <h3>Person 1</h3>
-            <a href="https://google.com">Social Media</a>
-        </div>
-        <div>
-            <h3>Person 2</h3>
-            <a href="https://google.com">Social Media</a>
-        </div>
-        <br><br>
-        <div class="center">
-            <a href="./index.html">Back to Overview</a>
-        </div>
-    </body>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MAP TITLE - Attributions</title>
+
+	<!-- CSS Imports -->
+	<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.css'>
+	<link rel="stylesheet" href="../style.css">
+
+	<!-- Javascript Imports -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="./data.js" defer></script>
+	<script src="../utils.js"></script>
+</head>
+<body>
+<div id="app">
+
+	<h1 class="center">{{map.name}}</h1>
+	<p class="center">
+		This is where you can download all historical releases of {{map.name}}.
+		<br>
+		<b>It is not recommended to download non-latest version.</b>
+	</p>
+
+	<div id="table_of_contents" class="toc">
+		<h2>Additional Links:</h2>
+		<ul>
+			<li v-for="link in page.contents"><a :href="link[1]">{{link[0]}}</a></li>
+		</ul>
+	</div>
+
+	<div id="body"></div>
+
+	<div id="footer" class="center toc" v-if="page.show.footer">
+		<ul>
+			<li v-for="link in page.footer"><a :href="link[1]">{{link[0]}}</a></li>
+		</ul>
+	</div>
+</div>
+</body>
 </html>
