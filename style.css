@@ -14,7 +14,7 @@ img {
 }
 
 
-div.toc h2 {
+div.toc h3 {
     text-align: center;
 }
 
@@ -30,4 +30,23 @@ div.toc > ul {
 div.toc > ul > li {
     padding: 5px;
     margin: 5px;
+}
+
+
+div.attribution {
+    background-color: rgb(50, 71, 100);
+    border-radius: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+
+img.icon {
+    --size: 30px;
+    width: var(--size);
+    height: var(--size);
+}
+
+img.inline {
+    vertical-align: middle;
 }
