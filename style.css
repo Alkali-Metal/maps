@@ -38,15 +38,18 @@ div.attribution {
     border-radius: 10px;
     padding-bottom: 5px;
     padding-top: 5px;
+    margin-bottom: 15px;
 }
 
 
-img.icon {
+.icon {
     --size: 30px;
     width: var(--size);
     height: var(--size);
 }
 
-img.inline {
+.inline {
+    display: inline-block;
+    margin: 0 2px;
     vertical-align: middle;
 }
