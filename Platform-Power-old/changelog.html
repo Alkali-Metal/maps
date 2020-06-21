@@ -13,6 +13,47 @@
             <h1>Platform Power Changelog</h1>
         </div>
         <div id="changelog">
+            <div id="1.5.2">
+                <h2>Version 1.5.2</h2>
+                Changes:
+                <ul>
+                    <li>
+                        Remove thrown menu prompts from the world.
+                    </li>
+                    <li>
+                        Add an error message for when not all of the teams are
+                        ready and someone tries to start the game.
+                    </li>
+                    <li>
+                        Change from a chat message to a title that the game is
+                        starting.
+                    </li>
+                    <li>
+                        Add a <code>control</code> menu item for force-starting
+                        the game regardless of pre-game checks. This should
+                        rarely be used, but can be used if people on teams are
+                        being annoying and not ready-ing up after a while.
+                    </li>
+                </ul>
+                <br><br>
+                Bug Fixes:
+                <ul>
+                    <li>
+                        Fix preventing the game from occasionally starting due
+                        to weird behaviour with the team enable/disable functions.
+                    </li>
+                    <li>
+                        Fixes edge case if all players died at the same time (or
+                        the game was only started with no one on an actual team)
+                        it will no longer hang in a perma-end state.
+                    </li>
+                    <li hidden>
+                        Adds a tag to the fireballs that get summoned to prevent
+                        them from flickering in and out of existance as that was
+                        super annoying.
+                    </li>
+                </ul>
+            </div>
             <div id="1.5.1">
                 <h2>Version 1.5.1</h2>
                 Changes in version 1.5.1:
