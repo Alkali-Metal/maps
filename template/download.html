@@ -26,7 +26,7 @@
 
 	<!-- Javascript Imports -->
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-	<script src="./data.js" defer></script>
+	<script src="./assets/icons.js" defer></script>
 	<script src="../utils.js"></script>
 	<script>
 		let layout = {
@@ -62,5 +62,18 @@
 		</ul>
 	</div>
 </div>
+<script src="./data.js"></script>
+<script>
+	let params = new URLSearchParams(window.location.search);
+	if (params.get(`nodownload`) == null || params.get(`nodownload`) === `false`) {
+		for (var version of map_data.$data.map.versions) {
+			if (version.latest && !version.hidden) {
+				download(version.filename);
+				break;
+			};
+		};
+	};
+	show_app();
+</script>
 </body>
 </html>

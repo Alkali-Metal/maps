@@ -26,6 +26,7 @@
 
 	<!-- Javascript Imports -->
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="./assets/icons.js" defer></script>
 	<script src="./data.js" defer></script>
 	<script src="../utils.js"></script>
 	<script>
@@ -34,8 +35,8 @@
 			header: true,
 			table_of_contents: true,
 			body: {
-				images: false,
-				download: true
+				images: true,
+				download: false
 			},
 			footer: true
 		}
@@ -60,15 +61,15 @@
 			<a data-hidden="false" href="./download.html">
 				<button>Download Map Version {{latest.id}} for Minecraft {{latest.mc_versions}}</button>
 			</a>
+			<hr>
 		</div>
 
 
 		<div class="center" id="images" v-if="page.show.body.images">
-			<hr>
 			<img v-for="image of map.images" :src="`./assets/${image[0]}`" :alt="image[1]">
+			<hr>
 		</div>
 	</div>
-	<hr>
 	<div id="footer" class="center toc" v-if="page.show.footer">
 		<ul>
 			<li v-for="link in page.footer"><a :href="link[1]">{{link[0]}}</a></li>

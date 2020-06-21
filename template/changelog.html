@@ -26,6 +26,7 @@
 
 	<!-- Javascript Imports -->
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="./assets/icons.js" defer></script>
 	<script src="./data.js" defer></script>
 	<script src="../utils.js"></script>
 	<script>
@@ -50,20 +51,21 @@
 		<hr>
 	</div>
 	<div id="body">
-		<div v-for="version in map.versions" :id="version.id">
+		<div v-for="version in map.versions" v-if="!version.hidden" :id="version.id">
 			<h2>v{{version.id}}</h2>
 			Changes:
 			<ul>
-				<li v-for="change in version.changes">{{change}}</li>
+				<li v-for="change in version.changes" v-html="change"></li>
 			</ul>
+			<hr>
 		</div>
 	</div>
-	<hr>
 	<div id="footer" class="center toc" v-if="page.show.footer">
 		<ul>
 			<li v-for="link in page.footer"><a :href="link[1]">{{link[0]}}</a></li>
 		</ul>
 	</div>
 </div>
+<script>show_app()</script>
 </body>
 </html>

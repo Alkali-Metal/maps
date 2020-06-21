@@ -1,36 +1,28 @@
-const version_object = {
-	id: ``,
-	latest: true,
-	filename: ``,
-	mc_versions: ``,
-	release_date: ``,
-	changes: []
-};
-const attribution_object = {
-	name: ``,
-	info: ``,
-	links: [
-		[`link name`, `link`]
-	]
-};
-const other_download = {
-	name: ``,
-	filename: ``,
-	info: ``,
-	alt: ``
-};
-const image_array = [`filepath`, `alt text`];
-
-
 let map_data = new Vue({
 	el: `#app`,
 	data: {
 		map: {
-			name: `MAP NAME`,
-			description: ``,
+			name: `Platform Power`,
+			description: `Platform Power is a team based PVP minigame where the goal is to keep your team from being eliminated and to eliminate the other teams. You can keep your team alive by securing your bed and powering the platforms for your team to gain resources and helpful advantages over the other teams, but if the other teams get them powered first you may be at risk of elimination sooner than wanted. These platforms are used to gain the resources needed to win and to fend off the other teams. This minigame supports between 2-4 teams each with at least 1 player per team. Download at the bottom of this page.`,
 			versions: [],
 			images: [],
-			attributions: [],
+			attributions: [
+				{
+					name: `Jarren`,
+					info: ``,
+					links: []
+				},
+				{
+					name: `Ben Baptist`,
+					info: ``,
+					links: []
+				},
+				{
+					name: `Alan`,
+					info: ``,
+					links: []
+				}
+			],
 			other_downloads: []
 		},
 		page: {
@@ -52,7 +44,7 @@ let map_data = new Vue({
 		latest: function () {
 			let latest = [];
 			for (var version of this.map.versions) {
-				if (version.latest) {
+				if (version.latest && !version.hidden) {
 					return version;
 				};
 			};
