@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MAP TITLE - Releases</title>
+
+	<!-- General Embed tags -->
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:url" content="">
+	<meta property="og:image" content="">
+	<meta property="og:type" content="website">
+
+	<!-- Embed information for Discord -->
+	<meta name="description" content="">
+
+	<!-- Embed information for Twitter -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="">
+	<meta name="twitter:description" content="">
+
+	<!-- CSS Imports -->
+	<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.css'>
+	<link rel="stylesheet" href="../style.css">
+
+	<!-- Javascript Imports -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="./data.js" defer></script>
+	<script src="../utils.js"></script>
+	<script>
+		let layout = {
+			title: true,
+			header: true,
+			table_of_contents: true,
+			body: {
+				images: true,
+				download: false
+			},
+			footer: true
+		}
+	</script>
+</head>
+<body>
+<div id="app">
+	<h1 v-if="page.show.title" class="center">{{map.name}}</h1>
+	<div v-if="page.show.header">
+		<p class="center">
+			{{map.description}}
+		</p>
+		<hr>
+	</div>
+	<div id="table_of_contents" class="toc" v-if="page.show.table_of_contents">
+		<h3>Additional Links:</h3>
+		<ul><li v-for="link in page.contents"><a :href="link[1]">{{link[0]}}</a></li></ul>
+		<hr>
+	</div>
+	<div id="body">
+		<div class="center" id="map-downloads" v-if="latest && page.show.body.download">
+			<a data-hidden="false" href="./download.html">
+				<button>Download Map Version {{latest.id}} for Minecraft {{latest.mc_versions}}</button>
+			</a>
+			<hr>
+		</div>
+
+
+		<div class="center" id="images" v-if="page.show.body.images">
+			<img v-for="image of map.images" :src="`./assets/${image[0]}`" :alt="image[1]">
+			<hr>
+		</div>
+	</div>
+	<div id="footer" class="center toc" v-if="page.show.footer">
+		<ul>
+			<li v-for="link in page.footer"><a :href="link[1]">{{link[0]}}</a></li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>

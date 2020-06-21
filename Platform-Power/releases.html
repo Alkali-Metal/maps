@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MAP TITLE - Releases</title>
+
+	<!-- General Embed tags -->
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:url" content="">
+	<meta property="og:image" content="">
+	<meta property="og:type" content="website">
+
+	<!-- Embed information for Discord -->
+	<meta name="description" content="">
+
+	<!-- Embed information for Twitter -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="">
+	<meta name="twitter:description" content="">
+
+	<!-- CSS Imports -->
+	<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.css'>
+	<link rel="stylesheet" href="../style.css">
+
+	<!-- Javascript Imports -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+	<script src="./assets/icons.js" defer></script>
+	<script src="./data.js" defer></script>
+	<script src="../utils.js"></script>
+	<script>
+		let layout = {
+			title: true,
+			header: true,
+			table_of_contents: true,
+			body: {
+				table: {
+					header: true,
+					version: true,
+					release_date: true,
+					mc_version: true,
+					changelog: true,
+					download: true,
+					show_flagged: true,
+					show_latest: true
+				}
+			},
+			footer: true
+		}
+	</script>
+</head>
+<body>
+<div id="app">
+	<h1 v-if="page.show.title" class="center">{{map.name}}</h1>
+	<div v-if="page.show.header">
+		<p class="center">
+			This is where you can download all historical releases of everything
+			related to {{map.name}}.
+			<br>
+			<b>It is not recommended to download non-latest version.</b>
+		</p>
+		<hr>
+	</div>
+	<div id="table_of_contents" class="toc" v-if="page.show.table_of_contents">
+		<h3>Additional Links:</h3>
+		<ul><li v-for="link in page.contents"><a :href="link[1]">{{link[0]}}</a></li></ul>
+		<hr>
+	</div>
+	<div id="body">
+		<div class="releases">
+			<h2>Releases:</h2>
+			<p>
+				A flagged version can have many different colours to indicate
+				different things. Please check the below legend for information.
+				<br><br>
+				<flag colour="#00aa00" alt="Version Flag"></flag>: This flag indicates that it is
+				the most recent version of the map that supports older versions
+				of Minecraft.
+				<br>
+				<flag colour="red" alt="Error Flag"></flag>: This flag is indicating that there
+				are one or more major issues with that version and should not
+				be used under any circumstance
+			</p>
+			<br><br>
+			<table>
+				<tr v-if="page.show.body.table.header">
+					<td v-if="page.show.body.table.version" class="center">Map Version</td>
+					<td v-if="page.show.body.table.release_date" class="center">Release Date</td>
+					<td v-if="page.show.body.table.mc_version" class="center">Minecraft Releases</td>
+					<td v-if="page.show.body.table.changelog" class="center">Changelog</td>
+					<td v-if="page.show.body.table.download" class="center">Download</td>
+				</tr>
+				<tr v-for="release of map.versions" v-if="!release.hidden">
+					<td v-if="page.show.body.table.version" class="center">
+						{{release.id}}
+						<span v-if="page.show.body.table.show_latest && release.latest">
+							<tag alt="Latest Version"></tag>
+						</span>
+						<span v-if="page.show.body.table.show_flagged && release.flagged.show">
+							<flag :colour="release.flagged.colour" alt="Flagged Version"></flag>
+						</span>
+					</td>
+					<td v-if="page.show.body.table.release_date" class="center">{{release.release_date}}</td>
+					<td v-if="page.show.body.table.mc_version" class="center">{{release.mc_versions}}</td>
+					<td v-if="page.show.body.table.changelog" class="center"><a :href="`./changelog.html#${release.id}`">Changelog</a></td>
+					<td v-if="page.show.body.table.download" class="center">
+						<a v-if="release.download" :href="`./assets/downloads/${release.filename}`">
+							<download :alt="`Download map release version ${release.id}`"></download>
+						</a>
+						<span v-else>Not Available</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="other_downloads">
+			<hr>
+			<flag />
+			<hr>
+			<h2>Other Downloads:</h2>
+			<table>
+				<tr>
+					<td class="center">Name</td>
+					<td class="center">Info</td>
+					<td class="center">Download</td>
+				</tr>
+				<tr v-for="resource in map.other_downloads">
+					<td class="center">resource.name</td>
+					<td class="center">resource.info</td>
+					<td>
+						<a :href="`./assets/downloads/${resource.filename}`">
+							<download :alt="resource.alt"></download>
+						</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<hr>
+	<div id="footer" class="center toc" v-if="page.show.footer">
+		<ul>
+			<li v-for="link in page.footer"><a :href="link[1]">{{link[0]}}</a></li>
+		</ul>
+	</div>
+</div>
+<script>show_app()</script>
+</body>
+</html>
