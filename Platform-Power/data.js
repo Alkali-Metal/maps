@@ -14,9 +14,9 @@ let map_data = new Vue({
 					},
 					hidden: true,
 					download: false,
-					filename: `Platform_Power_1.15.2-V1.5.2.zip`,
+					filename: `Platform_Power_1.16-V1.5.2.zip`,
 					mc_versions: `1.16`,
-					release_date: `2020-06-`,
+					release_date: `2020-06-23`,
 					changes: [
 						`FEATURE: Add support for 1.16`,
 						`FEATURE: Remove thrown menu prompts from the world.`,

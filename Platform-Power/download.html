@@ -97,10 +97,12 @@
 			let v = params.get(`v`)
 			for (var version of map_data.$data.map.versions) {
 				if (v === version.id) {
-					let force_download = params.get(`force`);
-					if (version.hidden && (force_download == null || force_download !== `false`)) {
-						download(version.filename);
-						break;
+					if (version.hidden) {
+						let force_download = params.get(`force`);
+						if (force_download !== null) {
+							download(version.filename);
+							break;
+						}
 					};
 				};
 			};
