@@ -16,7 +16,7 @@
 	<meta name="description" content="A team based PVP minigame where the goal is to power your platforms to gain power and defeat the other teams.">
 
 	<!-- Embed information for Twitter -->
-	<meta name="twitter:card" content="summary">
+	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Platform Power">
 	<meta name="twitter:description" content="A team based PVP minigame where the goal is to power your platforms to gain power and defeat the other teams.">
 
@@ -62,6 +62,9 @@
 <script>
 	let params = new URLSearchParams(window.location.search);
 	if (params.get(`nodownload`) == null || params.get(`nodownload`) === `false`) {
+
+		if (params.get(`v`))
+
 		for (var version of map_data.$data.map.versions) {
 			if (version.latest && !version.hidden) {
 				download(version.filename);
