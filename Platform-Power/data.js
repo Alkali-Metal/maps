@@ -211,18 +211,30 @@ let map_data = new Vue({
 			attributions: [
 				{
 					name: `Jarren`,
-					info: ``,
-					links: []
+					info: `Jarren is the original designer of Platform Power who was kind enough to allow me to port the map to Minecraft release 1.14+ and release it under the same name.`,
+					links: [
+						[`Website`, `https://www.thejarren.com/`],
+						[`YouTube`, `https://www.youtube.com/user/TheJarrenhorrocks`],
+						[`Twitter`, `https://twitter.com/thejarren`]
+					]
 				},
 				{
 					name: `Ben Baptist`,
-					info: ``,
-					links: []
+					info: `Ben is the original programmer of the original game, they were the person who wrote all of the commands to make the game come to life.`,
+					links: [
+						[`Website`, `https://benbaptist.com`],
+						[`Twitter`, `https://twitter.com/oha1th3r3`],
+						[`GitHub`, `https://github.com/benbaptist`],
+						[`Mixer`, `https://mixer.com/benbaptist`]
+					]
 				},
 				{
 					name: `Alan`,
-					info: ``,
-					links: []
+					info: `Alan is the one who made some of the textures for the map. The textures contributed are: redstone line, fireball`,
+					links: [
+						[`Twitter`, `https://twitter.com/CultOfAlan`],
+						[`Twitch`, `https://twitch.tv/CultOfAlan`]
+					]
 				}
 			],
 			other_downloads: []
