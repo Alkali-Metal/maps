@@ -103,7 +103,7 @@
 				</tr>
 			</table>
 		</div>
-		<div class="other_downloads" v-if="map.other_downloads.lengt">
+		<div class="other_downloads" v-if="map.other_downloads.length > 0">
 			<hr>
 			<h2>Other Downloads:</h2>
 			<table>
@@ -113,11 +113,11 @@
 					<td class="center">Download</td>
 				</tr>
 				<tr v-for="resource in map.other_downloads">
-					<td class="center">resource.name</td>
-					<td class="center">resource.info</td>
-					<td>
+					<td class="center">{{resource.name}}</td>
+					<td class="center" style="width: 65%;">{{resource.info}}</td>
+					<td class="center">
 						<a :href="`./assets/downloads/${resource.filename}`">
-							<download :alt="resource.alt"></download>
+							<download :alt="resource.alt" @click="download(resource.filename)"></download>
 						</a>
 					</td>
 				</tr>

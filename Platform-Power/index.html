@@ -51,18 +51,28 @@
 		<hr>
 	</div>
 	<div id="table_of_contents" class="toc" v-if="page.show.table_of_contents">
-		<h3>Additional Links:</h3>
+		<h2>Additional Links:</h2>
 		<ul><li v-for="link in page.contents"><a :href="link[1]">{{link[0]}}</a></li></ul>
 		<hr>
 	</div>
 	<div id="body">
 		<div class="center" id="map-downloads" v-if="latest && page.show.body.download">
+			<h2>Map Download:</h2>
 			<a data-hidden="false" href="./download.html">
 				<button>Download Map Version {{latest.id}} for Minecraft {{latest.mc_versions}}</button>
 			</a>
 			<hr>
 		</div>
 
+		<div id="other_downloads" class="center" v-if="map.other_downloads.length > 0">
+			<h3>Other Downloads:</h3>
+			<div v-for="download of map.other_downloads">
+				<a :href="`./assets/downloads/${download.filename}`" :alt="download.alt">
+					<button>Download {{download.name}}</button>
+				</a>
+			</div>
+			<hr>
+		</div>
 
 		<div class="center" id="images" v-if="page.show.body.images">
 			<img v-for="image of map.images" :src="`./assets/${image[0]}`" :alt="image[1]">
