@@ -20,10 +20,13 @@
 	<meta name="twitter:title" content="Platform Power">
 	<meta name="twitter:description" content="A team based PVP minigame where the goal is to power your platforms to gain power and defeat the other teams.">
 
+	<!-- CSS Imports -->
+	<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.css'>
+	<link rel="stylesheet" href="../style.css">
+
 	<!-- Javascript Imports -->
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-	<script src="./assets/icons.js" defer></script>
-	<script src="./data.js" defer></script>
+	<script src="./assets/icons.js"></script>
 	<script src="../utils.js"></script>
 	<script>
 		let layout = {
@@ -55,7 +58,7 @@
 		A few things before you get started:
 		<ol>
 			<li>
-				This map is not copyleft, you cannot upload or modify this map without the creator's permission (<strong>Alkali Metal</strong>).
+				This map is not copyleft, you cannot upload, modify and redstribute this map without the creator's permission (<strong>Alkali Metal</strong>).
 			</li>
 			<li>
 				This map is a port of another map by the same name which was originally designed by Jarren and Ben Baptist, Alkali_metal has received permission from Jarren to port the map.
@@ -84,17 +87,25 @@
 		</ul>
 	</div>
 </div>
+<script src="./data.js"></script>
 <script>
 	let params = new URLSearchParams(window.location.search);
 	if (params.get(`nodownload`) == null || params.get(`nodownload`) === `false`) {
 
-		if (params.get(`v`))
-
-		for (var version of map_data.$data.map.versions) {
-			if (version.latest && !version.hidden) {
-				download(version.filename);
-				break;
+		// Check if they are specifying a version
+		if (params.get(`v`)) {
+			let v = params.get(`v`)
+			for (var version of map_data.$data.map.versions) {
+				if (v === version.id) {
+					let force_download = params.get(`force`);
+					if (version.hidden && (force_download == null || force_download !== `false`)) {
+						download(version.filename);
+						break;
+					};
+				};
 			};
+		} else {
+			download(map_data.$root.latest.filename);
 		};
 	};
 </script>
