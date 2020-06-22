@@ -73,16 +73,8 @@
 			<p>
 				A flagged version can have many different colours to indicate
 				different things. Please check the below legend for information.
-				<br><br>
-				<flag colour="#00aa00" alt="Version Flag"></flag>: This flag indicates that it is
-				the most recent version of the map that supports older versions
-				of Minecraft.
-				<br>
-				<flag colour="red" alt="Error Flag"></flag>: This flag is indicating that there
-				are one or more major issues with that version and should not
-				be used under any circumstance
 			</p>
-			<br><br>
+			<br>
 			<table>
 				<tr v-if="page.show.body.table.header">
 					<td v-if="page.show.body.table.version" class="center">Map Version</td>
@@ -105,15 +97,13 @@
 					<td v-if="page.show.body.table.mc_version" class="center">{{release.mc_versions}}</td>
 					<td v-if="page.show.body.table.changelog" class="center"><a :href="`./changelog.html#${release.id}`">Changelog</a></td>
 					<td v-if="page.show.body.table.download" class="center">
-						<a v-if="release.download" :href="`./assets/downloads/${release.filename}`">
-							<download :alt="`Download map release version ${release.id}`"></download>
-						</a>
+						<download v-if="release.download" :alt="`Download map release version ${release.id}`" @click="download(release.filename)"></download>
 						<span v-else>Not Available</span>
 					</td>
 				</tr>
 			</table>
 		</div>
-		<div class="other_downloads">
+		<div class="other_downloads" v-if="map.other_downloads.lengt">
 			<hr>
 			<h2>Other Downloads:</h2>
 			<table>

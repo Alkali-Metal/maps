@@ -160,8 +160,8 @@ let map_data = new Vue({
 					hidden: false,
 					download: false,
 					flagged: {
-						show: true,
-						colour: `red`
+						show: false,
+						colour: ``
 					},
 					filename: `Platform_Power_1.14-V1.2.0.zip`,
 					mc_versions: `1.14.X`,
