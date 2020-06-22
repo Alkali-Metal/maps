@@ -36,6 +36,18 @@
 			footer: true
 		}
 	</script>
+	<style>
+		table {
+			border-collapse: collapse;
+		}
+		table td {
+			text-align: center;
+			width: 33%;
+			border-color: #7289da;
+			border-style: solid;
+			border-width: 1px;
+		}
+	</style>
 </head>
 <body>
 <div id="app">
@@ -49,7 +61,54 @@
 		<ul><li v-for="link in page.contents"><a :href="link[1]">{{link[0]}}</a></li></ul>
 		<hr>
 	</div>
-	<div id="body"></div>
+	<div id="body">
+		<div>
+			<p>
+				There are a total of 9 platforms for each team, which consist of:
+				<table>
+					<tr>
+						<td colspan="3">Arena Center</td>
+					</tr>
+					<tr>
+						<td>Fireball Tower</td>
+						<td>Power Source</td>
+						<td>Fireball Tower</td>
+					</tr>
+					<tr>
+						<td>Redstone</td>
+						<td>Sandstone</td>
+						<td>Food & Ladders</td>
+					</tr>
+					<tr>
+						<td>Armour & Weapons</td>
+						<td>Skeletons</td>
+						<td>Misc Items</td>
+					</tr>
+				</table>
+				There is also a single island at the very center of all the teams which spawns stone bricks that cannot be broken with the fireballs.
+			</p>
+			<p>
+				The goal of the game is very simple, protect your bed and destroy the other team's beds to prevent them from re-spawning.
+			</p>
+		</div>
+		<div>
+			<h2>Helpful Hints:</h2>
+			<ul>
+				<li>
+					There is additional redstone in the hopper at the redstone island.
+				</li>
+				<li>
+					You can move the hopper to any island that you want more resources from.
+				</li>
+				<li>
+					There is a nice spot on the skeleton island for your bed.
+				</li>
+				<li>
+					If you lose your bed, you can steal another team's and put it in the same spot as your bed and it will still let you respawn.
+				</li>
+			</ul>
+		</div>
+	</div>
 	<hr>
 	<div id="footer" class="center toc" v-if="page.show.footer">
 		<ul>
