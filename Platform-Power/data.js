@@ -19,7 +19,6 @@ let map_data = new Vue({
 					release_date: `2020-06-23`,
 					changes: [
 						`FEATURE: Add support for 1.16`,
-						`FEATURE: Remove thrown menu prompts from the world.`,
 						`FEATURE: Add an error message for when not all of the teams are ready and someone tries to start the game.`,
 						`FEATURE: Change from a chat message to a title that the game is starting.`,
 						`FEATURE: Add a <code>control</code> menu item for force-starting the game regardless of pre-game checks. This should rarely be used, but can be used if people on teams are being annoying and not ready-ing up after a while.`,
@@ -28,6 +27,7 @@ let map_data = new Vue({
 						`FEATURE: Adds a tag to the fireballs that get summoned to prevent them from flickering in and out of existance.`,
 						`FEATURE: Unready's a team if the last player on the team decides the spectate the game.`,
 						`FEATURE: Adds a scoreboard to keep track of how many times each team has won. This can be reset by using the <code>/function classic:reset_wins</code> command, which will set all teams to 0 wins.`,
+						`PATCH: Remove thrown menu prompts from the world.`,
 						`PATCH: Updates the tag of blocks to clear to support all the 1.16 blocks.`,
 						`FIX: Players being set back to the team settings menu after a game rather than the main menu.`,
 						`FIX: Listeners firing for menu events when the control tag is removed from a player.`
