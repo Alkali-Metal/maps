@@ -18,7 +18,7 @@ div.toc h3 {
     text-align: center;
 }
 
-div.toc > ul {
+div.toc > ul, ul.ul-flex {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -27,7 +27,7 @@ div.toc > ul {
     justify-content: space-evenly;
 }
 
-div.toc > ul > li {
+div.toc > ul > li, ul.ul-flex > li {
     padding: 5px;
     margin: 5px;
 }
