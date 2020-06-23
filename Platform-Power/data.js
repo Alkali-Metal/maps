@@ -12,8 +12,8 @@ let map_data = new Vue({
 						show: false,
 						colour: ``
 					},
-					hidden: true,
-					download: false,
+					hidden: false,
+					download: true,
 					filename: `Platform_Power_1.16-V1.5.2.zip`,
 					mc_versions: `1.16`,
 					release_date: `2020-06-23`,
@@ -35,7 +35,7 @@ let map_data = new Vue({
 				},
 				{
 					id: `1.5.1`,
-					latest: true,
+					latest: false,
 					hidden: false,
 					download: true,
 					flagged: {
