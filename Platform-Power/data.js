@@ -37,7 +37,7 @@ let map_data = new Vue({
 					id: `1.5.1`,
 					latest: false,
 					hidden: false,
-					download: true,
+					download: false,
 					flagged: {
 						show: false,
 						colour: ``
@@ -53,7 +53,7 @@ let map_data = new Vue({
 					id: `1.5.0`,
 					latest: false,
 					hidden: false,
-					download: true,
+					download: false,
 					flagged: {
 						show: false,
 						colour: ``
@@ -73,10 +73,10 @@ let map_data = new Vue({
 					id: `1.4.0`,
 					latest: false,
 					hidden: false,
-					download: true,
+					download: false,
 					flagged: {
-						show: true,
-						colour: `#0a0`
+						show: false,
+						colour: ``
 					},
 					filename: `Platform_Power_1.14-V1.4.0.zip`,
 					mc_versions: `1.14.X`,
@@ -92,7 +92,7 @@ let map_data = new Vue({
 					id: `1.3.0`,
 					latest: false,
 					hidden: false,
-					download: true,
+					download: false,
 					flagged: {
 						show: false,
 						colour: ``
