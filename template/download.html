@@ -66,11 +66,25 @@
 <script>
 	let params = new URLSearchParams(window.location.search);
 	if (params.get(`nodownload`) == null || params.get(`nodownload`) === `false`) {
-		for (var version of map_data.$data.map.versions) {
-			if (version.latest && !version.hidden) {
-				download(version.filename);
-				break;
+
+		// Check if they are specifying a version
+		if (params.get(`v`) != null) {
+			let v = params.get(`v`)
+			for (var version of map_data.$data.map.versions) {
+				if (v === version.id) {
+					if (version.hidden) {
+						let force_download = params.get(`force`);
+						if (force_download !== null) {
+							download(version.filename);
+							break;
+						}
+					} else {
+						download(version.filename);
+					};
+				};
 			};
+		} else {
+			download(map_data.$root.latest.filename);
 		};
 	};
 </script>
