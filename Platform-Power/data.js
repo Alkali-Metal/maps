@@ -15,7 +15,7 @@ let map_data = new Vue({
 					hidden: false,
 					download: true,
 					filename: `Platform_Power_1.16-V1.5.2.zip`,
-					mc_versions: `1.16`,
+					mc_versions: `1.16.X`,
 					release_date: `2020-06-23`,
 					changes: [
 						`FEATURE: Add support for 1.16`,
