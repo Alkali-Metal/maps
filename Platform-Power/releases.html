@@ -96,8 +96,14 @@
 					<td v-if="page.show.body.table.release_date" class="center">{{release.release_date}}</td>
 					<td v-if="page.show.body.table.mc_version" class="center">{{release.mc_versions}}</td>
 					<td v-if="page.show.body.table.changelog" class="center"><a :href="`./changelog.html#${release.id}`">Changelog</a></td>
-					<td v-if="page.show.body.table.download" class="center">
-						<download v-if="release.download" :alt="`Download map release version ${release.id}`" @click="download(release.filename)"></download>
+					<td v-if="page.show.body.table.download" class="center" @click.stop="download(release.filename)">
+						<a
+							v-if="release.download"
+							:href="`./download.html?v=${release.id}`"
+							:alt="`Download map release version ${release.id}`"
+						>
+							<download></download>
+						</a>
 						<span v-else>Not Available</span>
 					</td>
 				</tr>
