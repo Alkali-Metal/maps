@@ -68,17 +68,27 @@
 	if (params.get(`nodownload`) == null || params.get(`nodownload`) === `false`) {
 
 		// Check if they are specifying a version
-		if (params.get(`v`) != null) {
+		if (params.get(`v`)) {
 			let v = params.get(`v`)
 			for (var version of map_data.$data.map.versions) {
 				if (v === version.id) {
-					if (version.hidden) {
+
+					// Ensure we actually have a file to download
+					if (!version.filename) {
+						break;
+					}
+
+					// Version is hidden, check if we are forcing a download
+					else if (version.hidden) {
 						let force_download = params.get(`force`);
 						if (force_download !== null) {
 							download(version.filename);
 							break;
 						}
-					} else {
+					}
+
+					// Version is public, allow download without forcing
+					else {
 						download(version.filename);
 					};
 				};
