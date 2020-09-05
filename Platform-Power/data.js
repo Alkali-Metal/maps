@@ -19,6 +19,8 @@ let map_data = new Vue({
 					release_date: `N/A`,
 					changes: [
 						`FEATURE: Change the scoreboard in the sidebar to be how many platforms the other teams have powered instead of how many players are alive for each team.`,
+						`FEATURE: Added advancements to help teach players the game`,
+						`PATCH: Remove planks from the food platform`,
 						`FIX: Misc islands triggering when they shouldn't be triggered. (orange triggered if blue was powered, red triggered if green was powered)`
 					]
 				},
