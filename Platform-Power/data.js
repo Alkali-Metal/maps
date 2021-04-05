@@ -30,7 +30,7 @@ let map_data = new Vue({
 						show: false,
 						colour: ``
 					},
-					hidden: true,
+					hidden: false,
 					download: false,
 					filename: `Platform_Power_1.16.2-V1.5.3.b1.zip`,
 					mc_versions: `>= 1.16.2`,
