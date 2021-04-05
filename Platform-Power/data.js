@@ -6,6 +6,24 @@ let map_data = new Vue({
 			description: `Platform Power is a team based PVP minigame where the goal is to keep your team from being eliminated and to eliminate the other teams. You can keep your team alive by securing your bed and powering the platforms for your team to gain resources and helpful advantages over the other teams, but if the other teams get them powered first you may be at risk of elimination sooner than wanted. These platforms are used to gain the resources needed to win and to fend off the other teams. This minigame supports between 2-4 teams each with at least 1 player per team. Download at the bottom of this page.`,
 			versions: [
 				{
+					id: `1.5.3-beta_2`,
+					latest: false,
+					flagged: {
+						show: true,
+						colour: `#F00`
+					},
+					hidden: false,
+					download: true,
+					filename: `Platform_Power_1.16.5-v1.5.3.b2.zip`,
+					mc_versions: `>= 1.16.5`,
+					release_date: `2021-04-05`,
+					changes: [
+						`PATCH: Update misc island spawning to use a random_chance predicate instead of a loot table`,
+						`PATCH: Prevent potentially epileptic-seizure inducing flashing when randomizing teams`,
+						`FIX: Reset the powered island count before starting the game to prevent erroneous counts.`
+					]
+				},
+				{
 					id: `1.5.3-beta_1`,
 					latest: false,
 					flagged: {
