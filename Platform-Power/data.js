@@ -282,7 +282,6 @@ let map_data = new Vue({
 	},
 	computed: {
 		latest: function () {
-			let latest = [];
 			for (var version of this.map.versions) {
 				if (version.latest && !version.hidden) {
 					return version;
