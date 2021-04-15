@@ -279,7 +279,7 @@ let map_data = new Vue({
 					name: `Resource Pack`,
 					info: `This is the custom resource pack that can go along with the game. This is completely optional and by no means needed for the map to make sense or look nice.`,
 					alt: `Resource Pack Download`,
-					filename: `Platform_Power_Resource_Pack.zip`
+					filename: `Platform_Power_Remastered_Resource_Pack.zip`
 				}
 			]
 		},
