@@ -6,14 +6,42 @@ let map_data = new Vue({
 			description: `Platform Power is a team based PVP minigame where the goal is to keep your team from being eliminated and to eliminate the other teams. You can keep your team alive by securing your bed and powering the platforms for your team to gain resources and helpful advantages over the other teams, but if the other teams get them powered first you may be at risk of elimination sooner than wanted. These platforms are used to gain the resources needed to win and to fend off the other teams. This minigame supports between 2-4 teams each with at least 1 player per team. Download at the bottom of this page.`,
 			versions: [
 				{
-					id: `1.5.3-beta_3`,
-					latest: false,
+					id: `1.5.3`,
+					latest: true,
 					flagged: {
-						show: true,
-						colour: `#F00`
+						show: false,
+						colour: ``
 					},
 					hidden: false,
 					download: true,
+					filename: `Platform_Power_1.16.5-v1.5.3.zip`,
+					mc_versions: `>= 1.16.5`,
+					release_date: `2021-04-17`,
+					changes: [
+						`FEATURE: Change the scoreboard in the sidebar to be how many platforms the other teams have powered instead of how many players are alive for each team.`,
+						`FEATURE: Added advancements to help teach players the game`,
+						`FEATURE: When wanting to spectate a game, the player gets put into spectator mode immediately instead of just being moved to the upper area of the lobby.`,
+						`PATCH: Updated the block tags for the new lobby blocks.`,
+						`PATCH: Removed the need for the bad luck effect.`,
+						`PATCH: Protected the origin redstone block with obsidian.`,
+						`PATCH: Re-added planks to the food/ladder island.`,
+						`PATCH: Update pack_format in the datapacks`,
+						`PATCH: Update misc island spawning to use a random_chance predicate instead of a loot table`,
+						`PATCH: Prevent potentially epileptic-seizure inducing flashing when randomizing teams`,
+						`FIX: Misc island actually considers if it is powered or not before attempting to summon items.`,
+						`FIX: When enabling an already enabled team that is marked as ready, the barrier no longer gets removed.`,
+						`FIX: Reset the powered island count before starting the game to prevent erroneous counts.`
+					]
+				},
+				{
+					id: `1.5.3-beta_3`,
+					latest: false,
+					flagged: {
+						show: false,
+						colour: ``
+					},
+					hidden: true,
+					download: false,
 					filename: `Platform_Power_1.16.5-v1.5.3.b3.zip`,
 					mc_versions: `>= 1.16.5`,
 					release_date: `2021-04-16`,
@@ -35,7 +63,7 @@ let map_data = new Vue({
 						show: false,
 						colour: ``
 					},
-					hidden: false,
+					hidden: true,
 					download: false,
 					filename: `Platform_Power_1.16.5-v1.5.3.b2.zip`,
 					mc_versions: `>= 1.16.5`,
@@ -53,7 +81,7 @@ let map_data = new Vue({
 						show: false,
 						colour: ``
 					},
-					hidden: false,
+					hidden: true,
 					download: false,
 					filename: `Platform_Power_1.16.2-V1.5.3.b1.zip`,
 					mc_versions: `>= 1.16.2`,
@@ -67,7 +95,7 @@ let map_data = new Vue({
 				},
 				{
 					id: `1.5.2`,
-					latest: true,
+					latest: false,
 					flagged: {
 						show: false,
 						colour: ``
