@@ -1,6 +1,6 @@
 const version_object = {
 	id: ``,
-	latest: true,
+	latest: false,
 	flagged: {
 		show: false,
 		colour: ``
@@ -15,7 +15,7 @@ const version_object = {
 
 
 const attribution = {
-	name: `Jarren`,
+	name: ``,
 	info: ``,
 	links: [
 		[`Text`, `Link`]
