@@ -16,7 +16,7 @@ let map_data = new Vue({
 					download: true,
 					filename: `Platform_Power_1.19.1-v1.6.zip`,
 					mc_versions: `1.19.1`,
-					release_date: `2021-08-02`,
+					release_date: `2022-08-02`,
 					changes: [
 						`PATCH: Swapped from armour stands in favour of marker entities`,
 						`PATCH: Made it so players can't skip the night at all via sleeping`,
