@@ -49,7 +49,7 @@ let map_data = new Vue({
 					hidden: false,
 					download: true,
 					filename: `Platform_Power_1.16.5-v1.5.3.zip`,
-					mc_versions: `>= 1.16.5`,
+					mc_versions: `1.16.5`,
 					release_date: `2021-04-17`,
 					changes: [
 						`FEATURE: Change the scoreboard in the sidebar to be how many platforms the other teams have powered instead of how many players are alive for each team.`,
